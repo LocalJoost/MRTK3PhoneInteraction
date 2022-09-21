@@ -3,6 +3,7 @@ using MRTKExtensions.Services.Interfaces;
 using MRTKExtensions.Utilities;
 using RealityCollective.ServiceFramework.Services;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace PhoneInteractionDemo
 {
@@ -29,10 +30,14 @@ namespace PhoneInteractionDemo
         [SerializeField]
         private AudioSource confirmSound;
         
+        [SerializeField]
+        private InputActionReference tapReference;
+        
+        private IMRTK3ConfigurationFindingService m3Cfg;
+
         private float startTime;
         private bool isJustEnabled;
         private Vector3 lastMoveToLocation;
-        private IMRTK3ConfigurationFindingService m3Cfg;
         private bool isActive = true;
         private bool isBusy;
 
@@ -44,7 +49,7 @@ namespace PhoneInteractionDemo
         
             m3Cfg.LeftHandStatusTriggered.AddListener(OnHandTrigger);
             m3Cfg.RightHandStatusTriggered.AddListener(OnHandTrigger);
-            
+            tapReference.action.performed += ctx => InitialLocationComplete(); 
             startTime = Time.time + delay;
             isJustEnabled = true;
         }
@@ -61,12 +66,14 @@ namespace PhoneInteractionDemo
         private void Update()
         {
             if( isActive)
-            { var wTransform = worldObject.transform;
+            { 
+                var wTransform = worldObject.transform;
                 var camPosition = CameraCache.Main.transform.position;
-                wTransform.rotation = Quaternion.LookRotation(wTransform.position -
-                                                              new Vector3(camPosition.x,
-                                                                  worldObject.transform.position.y,
-                                                                  camPosition.z));
+                wTransform.rotation = 
+                    Quaternion.LookRotation(wTransform.position -
+                                              new Vector3(camPosition.x,
+                                                  worldObject.transform.position.y,
+                                                  camPosition.z));
             }
 
             if (isBusy || startTime > Time.time)
@@ -85,7 +92,8 @@ namespace PhoneInteractionDemo
                         isBusy = true;
                         var newPos = hitPoint;
                         LeanTween.move(worldObject, newPos,
-                            2.0f * (hitPoint - lastMoveToLocation).magnitude / speed).setEaseInOutSine().setOnComplete(() => isBusy = false);
+                            2.0f * (hitPoint - lastMoveToLocation).magnitude / speed).
+                            setEaseInOutSine().setOnComplete(() => isBusy = false);
                         lastMoveToLocation = newPos;
                     }
                 }
