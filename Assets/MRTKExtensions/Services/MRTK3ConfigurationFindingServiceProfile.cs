@@ -1,13 +1,13 @@
 
+using MRTKExtensions.Services.Interfaces;
 using RealityCollective.ServiceFramework.Definitions;
-using RealityCollective.ServiceFramework.Interfaces;
 using UnityEngine;
 
 namespace MRTKExtensions.Services
 {
     [CreateAssetMenu(menuName = "MRTK3ConfigurationFindingServiceProfile",
         fileName = "MRTK3ConfigurationFindingServiceProfile", order = (int)CreateProfileMenuItemIndices.ServiceConfig)]
-    public class MRTK3ConfigurationFindingServiceProfile : BaseServiceProfile<IServiceDataProvider>
+    public class MRTK3ConfigurationFindingServiceProfile : BaseServiceProfile<IMRTK3ConfigurationFindingService>
     {
         [SerializeField]
         private float doubleClickTime = 0.2f;
