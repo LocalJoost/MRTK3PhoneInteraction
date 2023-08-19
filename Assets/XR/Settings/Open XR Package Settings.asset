@@ -76,7 +76,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_enabled: 0
   nameUi: Holographic Remoting for Play Mode
-  version: 1.5.1
+  version: 1.7.0
   featureIdInternal: com.microsoft.openxr.feature.playmoderemoting
   openxrExtensionStrings: XR_MSFT_holographic_remoting XR_MSFT_holographic_remoting_speech
   company: Microsoft
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_enabled: 1
   nameUi: Motion Controller Model
-  version: 1.5.1
+  version: 1.7.0
   featureIdInternal: com.microsoft.openxr.feature.controller
   openxrExtensionStrings: XR_MSFT_controller_model XR_FB_render_model
   company: Microsoft
@@ -147,6 +147,7 @@ MonoBehaviour:
   - {fileID: 3664285805818573663}
   - {fileID: 2331269863069614100}
   - {fileID: 1998569833086924964}
+  - {fileID: 7813105708685598883}
   - {fileID: 8803203388450246236}
   - {fileID: 2124330291136031227}
   - {fileID: 8441647894550898771}
@@ -170,7 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_enabled: 1
   nameUi: Mixed Reality Features
-  version: 1.5.1
+  version: 1.7.0
   featureIdInternal: com.microsoft.openxr.feature.hololens
   openxrExtensionStrings: XR_MSFT_holographic_window_attachment XR_KHR_win32_convert_performance_counter_time
     XR_MSFT_unbounded_reference_space XR_MSFT_spatial_anchor XR_MSFT_secondary_view_configuration
@@ -182,6 +183,7 @@ MonoBehaviour:
   required: 1
   disableFirstPersonObserver: 0
   enablePoseUpdateOnBeforeRender: 0
+  validationRuleTarget: 0
 --- !u!114 &-4229995003489333353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,7 +220,7 @@ MonoBehaviour:
   nameUi: Mock Runtime
   version: 0.0.2
   featureIdInternal: com.unity.openxr.feature.mockruntime
-  openxrExtensionStrings: XR_UNITY_null_gfx
+  openxrExtensionStrings: XR_UNITY_null_gfx XR_UNITY_android_present
   company: Unity
   priority: 0
   required: 0
@@ -237,7 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_enabled: 1
   nameUi: Hand Tracking
-  version: 1.5.1
+  version: 1.7.0
   featureIdInternal: com.microsoft.openxr.feature.handtracking
   openxrExtensionStrings: XR_EXT_hand_tracking XR_EXT_hand_joints_motion_range XR_MSFT_hand_tracking_mesh
   company: Microsoft
@@ -324,7 +326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_enabled: 1
   nameUi: Hand Tracking
-  version: 1.5.1
+  version: 1.7.0
   featureIdInternal: com.microsoft.openxr.feature.handtracking
   openxrExtensionStrings: XR_EXT_hand_tracking XR_EXT_hand_joints_motion_range XR_MSFT_hand_tracking_mesh
   company: Microsoft
@@ -349,7 +351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_enabled: 1
   nameUi: Hand Tracking
-  version: 1.5.1
+  version: 1.7.0
   featureIdInternal: com.microsoft.openxr.feature.handtracking
   openxrExtensionStrings: XR_EXT_hand_tracking XR_EXT_hand_joints_motion_range XR_MSFT_hand_tracking_mesh
   company: Microsoft
@@ -422,6 +424,36 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+--- !u!114 &-1094779187795631630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f647cc0545697264a9878224faada6d5, type: 3}
+  m_Name: MetaQuestFeature Android
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: Meta Quest Support
+  version: 1.0.0
+  featureIdInternal: com.unity.openxr.feature.metaquest
+  openxrExtensionStrings: XR_OCULUS_android_initialize_loader
+  company: Unity
+  priority: 0
+  required: 0
+  targetDevices:
+  - visibleName: Quest
+    manifestName: quest
+    enabled: 1
+  - visibleName: Quest 2
+    manifestName: quest2
+    enabled: 1
+  - visibleName: Quest Pro
+    manifestName: cambria
+    enabled: 1
 --- !u!114 &-1029703259246732897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -436,7 +468,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_enabled: 1
   nameUi: Motion Controller Model
-  version: 1.5.1
+  version: 1.7.0
   featureIdInternal: com.microsoft.openxr.feature.controller
   openxrExtensionStrings: XR_MSFT_controller_model XR_FB_render_model
   company: Microsoft
@@ -513,7 +545,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_enabled: 0
   nameUi: HP Reverb G2 Controller Profile
-  version: 1.5.1
+  version: 1.7.0
   featureIdInternal: com.microsoft.openxr.feature.interaction.hpmixedrealitycontroller
   openxrExtensionStrings: XR_EXT_hp_mixed_reality_controller
   company: Microsoft
@@ -533,7 +565,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_enabled: 0
   nameUi: Holographic Remoting remote app
-  version: 1.5.1
+  version: 1.7.0
   featureIdInternal: com.microsoft.openxr.feature.appremoting
   openxrExtensionStrings: XR_MSFT_holographic_remoting XR_MSFT_holographic_remoting_speech
   company: Microsoft
@@ -599,6 +631,26 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+--- !u!114 &2412701609299036066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4b862ee14fb479fbfe5fffe655d3ed3, type: 3}
+  m_Name: MetaQuestTouchProControllerProfile Standalone
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: Meta Quest Touch Pro Controller Profile
+  version: 0.0.1
+  featureIdInternal: com.unity.openxr.feature.input.metaquestpro
+  openxrExtensionStrings: XR_FB_touch_controller_pro
+  company: Unity
+  priority: 0
+  required: 0
 --- !u!114 &3008264666791401946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -633,7 +685,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_enabled: 0
   nameUi: Holographic Remoting remote app
-  version: 1.5.1
+  version: 1.7.0
   featureIdInternal: com.microsoft.openxr.feature.appremoting
   openxrExtensionStrings: XR_MSFT_holographic_remoting XR_MSFT_holographic_remoting_speech
   company: Microsoft
@@ -673,7 +725,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_enabled: 0
   nameUi: HP Reverb G2 Controller Profile
-  version: 1.5.1
+  version: 1.7.0
   featureIdInternal: com.microsoft.openxr.feature.interaction.hpmixedrealitycontroller
   openxrExtensionStrings: XR_EXT_hp_mixed_reality_controller
   company: Microsoft
@@ -779,6 +831,26 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+--- !u!114 &4675446566479769743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4b862ee14fb479fbfe5fffe655d3ed3, type: 3}
+  m_Name: MetaQuestTouchProControllerProfile Android
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: Meta Quest Touch Pro Controller Profile
+  version: 0.0.1
+  featureIdInternal: com.unity.openxr.feature.input.metaquestpro
+  openxrExtensionStrings: XR_FB_touch_controller_pro
+  company: Unity
+  priority: 0
+  required: 0
 --- !u!114 &5808469235449399046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -799,6 +871,7 @@ MonoBehaviour:
   - {fileID: 333890658351022374}
   - {fileID: 5225230015446272}
   - {fileID: 3986729956920318857}
+  - {fileID: 2412701609299036066}
   - {fileID: -1145995142083732497}
   - {fileID: -1449842256203823883}
   - {fileID: -4704923738922945810}
@@ -827,7 +900,10 @@ MonoBehaviour:
   - {fileID: -7578711681037114494}
   - {fileID: -4010062732548190829}
   - {fileID: -2176080944198943528}
+  - {fileID: -1094779187795631630}
+  - {fileID: 4675446566479769743}
   - {fileID: 6109557822000614187}
+  - {fileID: 7578572325344215185}
   - {fileID: 9112939208081591249}
   - {fileID: 7051566111473826041}
   - {fileID: 3804990121089114563}
@@ -876,6 +952,47 @@ MonoBehaviour:
   required: 0
   targetQuest: 1
   targetQuest2: 1
+--- !u!114 &7578572325344215185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7de993716e042c6499d0c18eed3a773c, type: 3}
+  m_Name: MockRuntime Android
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: Mock Runtime
+  version: 0.0.2
+  featureIdInternal: com.unity.openxr.feature.mockruntime
+  openxrExtensionStrings: XR_UNITY_null_gfx XR_UNITY_android_present
+  company: Unity
+  priority: 0
+  required: 0
+  ignoreValidationErrors: 0
+--- !u!114 &7813105708685598883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4b862ee14fb479fbfe5fffe655d3ed3, type: 3}
+  m_Name: MetaQuestTouchProControllerProfile WSA
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: Meta Quest Touch Pro Controller Profile
+  version: 0.0.1
+  featureIdInternal: com.unity.openxr.feature.input.metaquestpro
+  openxrExtensionStrings: XR_FB_touch_controller_pro
+  company: Unity
+  priority: 0
+  required: 0
 --- !u!114 &8441647894550898771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -890,7 +1007,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_enabled: 1
   nameUi: Mixed Reality Features
-  version: 1.5.1
+  version: 1.7.0
   featureIdInternal: com.microsoft.openxr.feature.hololens
   openxrExtensionStrings: XR_MSFT_holographic_window_attachment XR_KHR_win32_convert_performance_counter_time
     XR_MSFT_unbounded_reference_space XR_MSFT_spatial_anchor XR_MSFT_secondary_view_configuration
@@ -902,6 +1019,7 @@ MonoBehaviour:
   required: 1
   disableFirstPersonObserver: 0
   enablePoseUpdateOnBeforeRender: 0
+  validationRuleTarget: 0
 --- !u!114 &8803203388450246236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -936,7 +1054,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_enabled: 0
   nameUi: Motion Controller Model
-  version: 1.5.1
+  version: 1.7.0
   featureIdInternal: com.microsoft.openxr.feature.controller
   openxrExtensionStrings: XR_MSFT_controller_model XR_FB_render_model
   company: Microsoft
